@@ -1,0 +1,56 @@
+GET http://localhost:8080/api/turmas
+
+###
+
+POST http://localhost:8080/api/turmas
+Content-Type: application/json
+
+{
+    "sigla": "APS2",
+    "descricao": "Turma APS",
+    "ano": 2023,
+    "semestre": 5,
+    "vagasMax": 20,
+    "vagasMin": 5
+}
+
+###
+
+GET http://localhost:8080/api/turmas/1
+
+### 
+
+GET http://localhost:8080/api/turmas/listarAlunos/1
+
+###
+
+POST http://localhost:8080/api/alunos
+Content-Type: application/json
+
+{
+    "nome": "Matheus",
+    "cpf": "03744544544",
+    "matricula": "037111888569"
+}
+
+###
+
+GET http://localhost:8080/api/alunos
+
+###
+
+GET http://localhost:8080/api/alunos/1
+
+### 
+
+POST http://localhost:8080/api/alunos/matricular
+Content-Type: application/json
+
+{
+    "matricula": "037111888569",
+    "turmas": [1,2]
+}
+
+### 
+
+GET http://localhost:8080/api/alunos/listarTurmas/037111888569
